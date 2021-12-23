@@ -1,5 +1,6 @@
 {
   "name": "react-nft-app",
+  "proxy": "https://react-nft-project.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -21,7 +21,9 @@ function App() {
       const collectionAddress = "0xEb9278Ff741c67880cbD61852A31f4f5BE7B5F46";
       const url = `https://testnets-api.opensea.io/assets?asset_contract_address=${collectionAddress}&order_direction=asc`;
 
-      const openseaData = await axios.get(url);
+      const openseaData = await axios.get(url, {
+        proxy: "https://react-nft-project.netlify.app/",
+      });
 
       setPunkListData(openseaData.data.assets);
     };
