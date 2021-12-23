@@ -6,13 +6,12 @@ import "./punklist.css";
 // Components
 import CollectionCard from "./CollectionCard/CollectionCard";
 
-const Punklist = ({ punkListData }) => {
+const Punklist = ({ punkListData, setSelectedPunk }) => {
   return (
     <div className="punklist">
       {punkListData.map((punk) => (
-        <div>
+        <div key={punk.token_id} onClick={() => setSelectedPunk(punk.token_id)}>
           <CollectionCard
-            key={punk.token_id}
             id={punk.token_id}
             name={punk.name}
             traits={punk.traits}

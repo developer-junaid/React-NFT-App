@@ -9,10 +9,12 @@ import Header from "./components/Header/Header";
 // Axios
 import axios from "axios";
 import Punklist from "./components/Punklist/Punklist";
+import Main from "./components/Main/Main";
 
 function App() {
   // Data from OpenSea
   const [punkListData, setPunkListData] = useState([]);
+  const [selectedPunk, setSelectedPunk] = useState(0);
 
   useEffect(() => {
     const getNFTs = async () => {
@@ -21,7 +23,6 @@ function App() {
 
       const openseaData = await axios.get(url);
 
-      console.log("Data: ", openseaData.data.assets);
       setPunkListData(openseaData.data.assets);
     };
 
@@ -31,7 +32,15 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Punklist punkListData={punkListData} />
+      {punkListData.length > 0 && (
+        <>
+          <Main selectedPunk={selectedPunk} punkListData={punkListData} />
+          <Punklist
+            punkListData={punkListData}
+            setSelectedPunk={setSelectedPunk}
+          />
+        </>
+      )}
     </div>
   );
 }
