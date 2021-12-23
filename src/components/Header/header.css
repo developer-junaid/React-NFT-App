@@ -1,0 +1,79 @@
+.header {
+  color: white;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > div {
+  margin: 10px;
+}
+
+.header .logo-container {
+}
+
+.logo-container .punk-logo {
+  width: 200px;
+}
+
+.header .search-bar {
+  background: #1c1c1e;
+  height: 50px;
+  flex: 1; /* Make it adjust size to full */
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.search-bar .search-icon-container {
+  margin: 10px;
+}
+
+.search-bar .search-input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  outline: none;
+  color: #eee;
+  font-size: 16px;
+}
+
+.header .header-items {
+  display: flex;
+  color: #a1a5b0;
+}
+
+.header-items > p {
+  margin: 10px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-actions > div {
+  margin: 10px;
+}
+
+.header-actions .theme-switch-container {
+  background-color: #1c1c1e;
+  border-radius: 50%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.theme-switch-container img {
+  height: 25px;
+}
+
+.header .login-button {
+  background: linear-gradient(to right, #59f9b7, #66feea);
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: black;
+}
