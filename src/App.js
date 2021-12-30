@@ -23,10 +23,7 @@ function App() {
       try {
         console.log("MAKING CALL ...");
 
-        const openseaData = await axios.get(url, {
-          method: "GET",
-          proxy: "https://react-nft-project.netlify.app/",
-        });
+        const openseaData = await axios.get(url);
 
         console.log("DATA: ", openseaData);
         setPunkListData(openseaData.data.assets);
