@@ -18,8 +18,6 @@ function App() {
 
   useEffect(() => {
     const getNFTs = async () => {
-      // const url = `https://testnets-api.opensea.io/assets?=&order_direction=asc`;
-
       const options = {
         method: "GET",
         url: "https://testnets-api.opensea.io/api/v1/assets",
@@ -31,27 +29,14 @@ function App() {
         },
       };
 
-      console.log("MAKING CALL ...");
-
       axios
         .request(options)
         .then(function (response) {
-          console.log("Data", response.data);
           setPunkListData(response.data.assets);
         })
         .catch(function (error) {
           console.error("err: ", error);
         });
-
-      // try {
-
-      //   const openseaData = await axios.get(url);
-
-      //   console.log("DATA: ", openseaData);
-      //   setPunkListData(openseaData.data.assets);
-      // } catch (error) {
-      //   console.log("ERROR: ", error);
-      // }
     };
 
     getNFTs();
