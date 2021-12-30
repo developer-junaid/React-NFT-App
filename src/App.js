@@ -18,15 +18,21 @@ function App() {
 
   useEffect(() => {
     const getNFTs = async () => {
-      const collectionAddress = "0xEb9278Ff741c67880cbD61852A31f4f5BE7B5F46";
-      const url = `https://testnets-api.opensea.io/assets?asset_contract_address=${collectionAddress}&order_direction=asc`;
+      const url = `https://testnets-api.opensea.io/assets?asset_contract_address=0xEb9278Ff741c67880cbD61852A31f4f5BE7B5F46&order_direction=asc`;
 
-      const openseaData = await axios.get(url, {
-        method: "GET",
-        proxy: "https://react-nft-project.netlify.app/",
-      });
+      try {
+        console.log("MAKING CALL ...");
 
-      setPunkListData(openseaData.data.assets);
+        const openseaData = await axios.get(url, {
+          method: "GET",
+          proxy: "https://react-nft-project.netlify.app/",
+        });
+
+        console.log("DATA: ", openseaData);
+        setPunkListData(openseaData.data.assets);
+      } catch (error) {
+        console.log("ERROR: ", error);
+      }
     };
 
     getNFTs();
